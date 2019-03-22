@@ -1,0 +1,12 @@
+.addbook-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.addbook-container > * {
+  width: 100%;
+}
+
+.addbook-container form > * {
+  width: 100%;
+}

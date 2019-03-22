@@ -1,0 +1,45 @@
+<div class="addbook-container">
+  <form [formGroup]="bookForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
+    <!-- Title -->
+    <mat-form-field class="dcp-input-field">
+      <input matInput placeholder="Title" formControlName="title">
+      <mat-hint>Please enter book title</mat-hint>
+      <mat-error *ngIf="title.hasError('required')">
+        This is <strong>required</strong> field
+      </mat-error>
+
+      <mat-error *ngIf="title.hasError('maxlength')">
+        Title has maxlength = 30
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Category -->
+    <mat-form-field class="dcp-input-field">
+      <mat-label>Category</mat-label>
+      <mat-select required formControlName="category">
+        <mat-option *ngFor="let cate of categories" [value]="cate">
+          {{cate}}
+        </mat-option>
+      </mat-select>
+
+      <mat-hint>Please choose book category</mat-hint>
+
+      <mat-error *ngIf="category.hasError('required')">
+        This is <strong>required</strong> field
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field class="dcp-input-field">
+
+      <textarea matInput placeholder="Description" formControlName="desc"></textarea>
+
+      <mat-hint>Please enter book description</mat-hint>
+
+      <mat-error *ngIf="desc.hasError('required')">
+        This is <strong>required</strong> field
+      </mat-error>
+    </mat-form-field>
+    <button mat-flat-button color="primary" type="submit">Add</button>
+  </form>
+</div>

@@ -1,0 +1,4 @@
+RUN command:
+docker-compose up -d
+
+After that, we will have full system. Test link: http://127.0.0.1:8000

@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "a3886a26-330c-4d72-9ddf-6e533578b13e",
+		"name": "Tabcorp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/api/books/list",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Test1\",\n\t\"category\": \"Drama\",\n\t\"desc\": \"Thu nghiem xem sao\"\n}"
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/api/books/addBook",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						"addBook"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
