@@ -33,10 +33,10 @@ function getAll(req, res) {
 function validate(data) {
     if  (!("title" in data) || !("category" in data) || !("desc" in data)) {
         return false;
-    } else if (data.title.length === 0 || data.category.length === 0 || data.desc.length === 0) {
+    } else if (data.title.trim().length === 0 || data.category.trim().length === 0 || data.desc.trim().length === 0) {
         return false;
     }
-    else if (data.title.length > 30) {
+    else if (data.title.trim().length > 30) {
         return false;
     }
     return true;
@@ -44,7 +44,12 @@ function validate(data) {
 
 function addBook(req, res) {
     const data = req.body;
-    const booksService = new BooksService(db, data);
+    const formatData = {
+        title: data.title.trim(),
+        category: data.category.trim(),
+        desc: data.desc.trim()
+    };
+    const booksService = new BooksService(db, formatData);
     if (validate(data)) {
         booksService.addBook().then(function(result) {
             res.json(returnData(result));

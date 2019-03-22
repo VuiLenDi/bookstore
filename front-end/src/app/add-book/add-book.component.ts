@@ -30,6 +30,14 @@ export class AddBookComponent implements OnInit {
     if(!this.bookForm.valid) {
       return;
     }
+
+    if(this.title.value.trim().length == 0 ||
+      this.desc.value.trim().length == 0 ||
+      this.category.value.trim().length == 0
+    ) {
+      return;
+    }
+
     this.submitted = true;
     const data: Book = this.bookForm.value;
 

@@ -2,8 +2,8 @@
   <form [formGroup]="bookForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
     <!-- Title -->
     <mat-form-field class="dcp-input-field">
-      <input matInput placeholder="Title" formControlName="title">
-      <mat-hint>Please enter book title</mat-hint>
+      <input matInput placeholder="Title" formControlName="title" required maxlength="30" >
+      <mat-hint *ngIf="title.value && title.value.trim().length===0">Please enter book title</mat-hint>
       <mat-error *ngIf="title.hasError('required')">
         This is <strong>required</strong> field
       </mat-error>
@@ -22,7 +22,7 @@
         </mat-option>
       </mat-select>
 
-      <mat-hint>Please choose book category</mat-hint>
+      <mat-hint *ngIf="category.value && category.value.trim().length===0">Please choose book category</mat-hint>
 
       <mat-error *ngIf="category.hasError('required')">
         This is <strong>required</strong> field
@@ -32,14 +32,17 @@
     <!-- Description -->
     <mat-form-field class="dcp-input-field">
 
-      <textarea matInput placeholder="Description" formControlName="desc"></textarea>
+      <textarea matInput placeholder="Description" formControlName="desc" required></textarea>
 
-      <mat-hint>Please enter book description</mat-hint>
+      <mat-hint *ngIf="desc.value && desc.value.trim().length===0">Please enter book description</mat-hint>
 
       <mat-error *ngIf="desc.hasError('required')">
         This is <strong>required</strong> field
       </mat-error>
     </mat-form-field>
-    <button mat-flat-button color="primary" type="submit">Add</button>
+    <div class="button-container">
+      <button mat-flat-button color="primary" type="submit" class="addbook-button">Add</button>
+    </div>
+
   </form>
 </div>

@@ -10,3 +10,12 @@
 .addbook-container form > * {
   width: 100%;
 }
+
+.addbook-container button.addbook-button {
+  width: 30%;
+}
+
+.button-container {
+  text-align: right;
+  padding: 10px 0;
+}
