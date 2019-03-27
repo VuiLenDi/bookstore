@@ -2,8 +2,8 @@ import { TestBed } from '@angular/core/testing';
 
 import { BookService } from './book.service';
 import {HttpClient} from "@angular/common/http";
-import {MessageService} from "./message.service";
-import {BaseService} from "./base.service";
+import {MessageService} from "../core/messages/message.service";
+import {BaseService} from "../shared/services/base.service";
 
 import { HttpClientModule }    from '@angular/common/http';
 

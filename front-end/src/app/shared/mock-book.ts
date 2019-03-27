@@ -1,4 +1,4 @@
-import { Book } from "./book";
+import { Book } from "../books/book";
 
 export const BOOKS: Book[] = [
   {id: 1, title: 'Double The Trouble', category: 'Drama', desc: 'After all that I had been through with Anita, I never thought that I would go though it ever again. I thought I had learned a valuable lesson and that no person would ever be able to get over on me again. Little did I know that not only would I go through it again but I would go through it with double the trouble.'},

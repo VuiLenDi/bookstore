@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {Book} from "./book";
 import {Observable, of} from 'rxjs';
 
-import {MessageService} from './message.service';
-import {BaseService} from "./base.service";
+import {MessageService} from '../core/messages/message.service';
+import {BaseService} from "../shared/services/base.service";
 
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {catchError, tap} from 'rxjs/operators';
@@ -30,12 +30,11 @@ export class BookService {
       );
   }
 
-  /** POST: add a new hero to the server */
   addBook (book: Book): Observable<Book> {
     const addBookUrl = this.baseService.baseUrl + this.booksUrl + '/addBook';
 
     return this.http.post<Book>(addBookUrl, book, httpOptions).pipe(
-      tap((newBook: Book) => this.log(`added hero w/ id=${newBook.id}`)),
+      tap((newBook: Book) => this.log(`added book w/ id=${newBook.id}`)),
       catchError(this.handleError<Book>('addBook'))
     );
   }

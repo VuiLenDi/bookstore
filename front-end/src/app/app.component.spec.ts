@@ -3,7 +3,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import {BrowserModule} from "@angular/platform-browser";
-import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -25,7 +24,6 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         BrowserModule,
-        AppRoutingModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,

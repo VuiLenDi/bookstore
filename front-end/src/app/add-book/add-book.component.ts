@@ -1,9 +1,9 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Book } from "../book";
+import { Book } from "../books/book";
 
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 
-import {BookService} from "../book.service";
+import {BookService} from "../books/book.service";
 
 @Component({
   selector: 'app-add-book',

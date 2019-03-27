@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Book} from "../book";
+import {Book} from "./book";
 
-import {BookService} from "../book.service";
+import {BookService} from "./book.service";
 
 @Component({
   selector: 'app-books',
@@ -10,11 +10,6 @@ import {BookService} from "../book.service";
 })
 export class BooksComponent implements OnInit {
   books: Book[];
-  selectedBook: Book;
-
-  onSelect(book: Book): void {
-    this.selectedBook = book;
-  }
 
   getBooks(): void {
     this.bookService.getBooks()
