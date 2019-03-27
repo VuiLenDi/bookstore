@@ -6,12 +6,10 @@ const port = 3000;
 let server = http.createServer(app);
 
 beforeAll((done) => {
-    console.log('khoi tao server');
     server.listen({ port }, done)
 });
 
 afterAll(() => {
-    console.log('vao day dong app');
     return server.close();
 });
 
