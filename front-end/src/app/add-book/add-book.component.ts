@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Book } from "../books/book";
+import { Book } from "../shared/models/book";
 
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 

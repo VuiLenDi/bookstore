@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Book} from "./book";
+import {Book} from "../shared/models/book";
 import {Observable, of} from 'rxjs';
 
 import {MessageService} from '../core/messages/message.service';
