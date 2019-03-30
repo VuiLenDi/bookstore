@@ -8,7 +8,7 @@ import {
   MatInputModule, MatListModule, MatMenuModule,
   MatOptionModule,
   MatSelectModule, MatToolbarModule
-} from "@angular/material";
+} from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -40,4 +40,4 @@ import {
     MatToolbarModule
   ]
 })
-export class AppMaterialModule { }
+export class AppMaterialModule {}

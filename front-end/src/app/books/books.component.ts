@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Book } from "../shared/models/book";
+import { Book } from '../shared/models/book';
 
-import { BookService } from "./book.service";
-import { Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
+import { BookService } from './book.service';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-books',

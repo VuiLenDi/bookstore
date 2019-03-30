@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {Book} from "../shared/models/book";
-import {Observable, of} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Book } from '../shared/models/book';
+import { Observable, of } from 'rxjs';
 
-import {MessageService} from '../core/messages/message.service';
-import {BaseService} from "../shared/services/base.service";
+import { MessageService } from '../core/messages/message.service';
+import { BaseService } from '../shared/services/base.service';
 
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {catchError, tap} from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, tap } from 'rxjs/operators';
 
 
 const httpOptions = {
@@ -30,7 +30,7 @@ export class BookService {
       );
   }
 
-  addBook (book: Book): Observable<Book> {
+  addBook(book: Book): Observable<Book> {
     const addBookUrl = this.baseService.baseUrl + this.booksUrl + '/addBook';
 
     return this.http.post<Book>(addBookUrl, book, httpOptions).pipe(

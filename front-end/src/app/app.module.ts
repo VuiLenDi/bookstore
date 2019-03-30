@@ -6,12 +6,12 @@ import { BooksComponent } from './books/books.component';
 
 import { MessagesComponent } from './core/messages/messages.component';
 
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AddBookComponent } from './add-book/add-book.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LayoutModule } from '@angular/cdk/layout';
-import { CoreModule } from "./core/core.module";
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -30,4 +30,4 @@ import { CoreModule } from "./core/core.module";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

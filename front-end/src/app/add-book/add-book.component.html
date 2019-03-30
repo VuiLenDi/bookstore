@@ -2,7 +2,7 @@
   <form [formGroup]="bookForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
     <!-- Title -->
     <mat-form-field class="dcp-input-field">
-      <input matInput placeholder="Title" formControlName="title" required maxlength="30" >
+      <input matInput placeholder="Title" formControlName="title" required maxlength="30">
       <mat-hint *ngIf="title.value && title.value.trim().length===0">Please enter book title</mat-hint>
       <mat-error *ngIf="title.hasError('required')">
         This is <strong>required</strong> field

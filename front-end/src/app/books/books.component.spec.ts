@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BooksComponent } from './books.component';
-import {BrowserModule} from "@angular/platform-browser";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatCardModule,
@@ -13,9 +13,9 @@ import {
   MatInputModule, MatListModule, MatMenuModule,
   MatOptionModule,
   MatSelectModule, MatToolbarModule
-} from "@angular/material";
-import {LayoutModule} from "@angular/cdk/layout";
-import {AddBookComponent} from "../add-book/add-book.component";
+} from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
+import { AddBookComponent } from '../add-book/add-book.component';
 
 describe('BooksComponent', () => {
   let component: BooksComponent;
@@ -23,7 +23,7 @@ describe('BooksComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BooksComponent, AddBookComponent ],
+      declarations: [BooksComponent, AddBookComponent],
       imports: [
         BrowserModule,
         FormsModule,
@@ -44,7 +44,7 @@ describe('BooksComponent', () => {
         MatToolbarModule
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
