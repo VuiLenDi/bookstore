@@ -2,7 +2,7 @@
   <form [formGroup]="bookForm" #formDir="ngForm" (ngSubmit)="onSubmit(formDir)">
     <!-- Title -->
     <mat-form-field class="dcp-input-field">
-      <input matInput placeholder="Title" formControlName="title" required maxlength="30">
+      <input name="title" matInput placeholder="Title" formControlName="title" required maxlength="30">
       <mat-hint *ngIf="title.value && title.value.trim().length===0">Please enter book title</mat-hint>
       <mat-error *ngIf="title.hasError('required')">
         This is <strong>required</strong> field
@@ -14,7 +14,7 @@
     </mat-form-field>
 
     <!-- Category -->
-    <mat-form-field class="dcp-input-field">
+    <mat-form-field id="category" class="dcp-input-field">
       <mat-label>Category</mat-label>
       <mat-select required formControlName="category">
         <mat-option *ngFor="let cate of categories" [value]="cate">
@@ -32,7 +32,7 @@
     <!-- Description -->
     <mat-form-field class="dcp-input-field">
 
-      <textarea matInput placeholder="Description" formControlName="desc" required></textarea>
+      <textarea name="description" matInput placeholder="Description" formControlName="desc" required></textarea>
 
       <mat-hint *ngIf="desc.value && desc.value.trim().length===0">Please enter book description</mat-hint>
 
