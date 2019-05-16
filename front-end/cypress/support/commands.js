@@ -23,3 +23,15 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+function addBook(title, description) {
+  cy.get("#mat-input-0").type(title);
+  cy.get("#mat-select-0")
+    .click()
+    .then(() => {
+      cy.get("#mat-option-0").click();
+    });
+  cy.get("#mat-input-1").type(description);
+}
+
+Cypress.Commands.add("addBookCommand", addBook);
