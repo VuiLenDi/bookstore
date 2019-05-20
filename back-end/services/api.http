@@ -1,0 +1,5 @@
+## Get books
+GET {{host-url}}/books/list
+Content-Type: application/json
+
+###
