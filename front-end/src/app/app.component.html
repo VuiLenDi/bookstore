@@ -1,2 +1,3 @@
 <h1>{{title}}</h1>
-<app-books></app-books>
+<a class="logout-button" mat-raised-button *ngIf="control.enableLogoutButton" (click)="logout()">Log out</a>
+<router-outlet></router-outlet>

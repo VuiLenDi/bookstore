@@ -15,12 +15,17 @@ RUN apt-get install -y nodejs
 # install angular/cli
 RUN npm -g install @angular/cli
 
+# SET ENVIRONMENT VARIABLES
+ENV ENVIRONMENT=production1
+ENV SomeAPIKey="This is not an API Key"
+ENV SomeOtherAPIKey="This is not another API Key"
+ENV ApiUrl='http://127.0.0.1:3000'
+
 #copy soure to app
 COPY ./ /app/
 RUN cd /app && \
     npm install && \
-    ng build
-
+    ng build --prod
 RUN cp -r /app/dist/front-end/* /usr/share/nginx/html
 
 RUN rm -Rf /app
