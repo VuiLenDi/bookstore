@@ -12,6 +12,17 @@ services:
     ports:
       - 27017:27017
 
+  # Redis:
+  bookstore_redis:
+    image: redis
+    container_name: bookstore_redis
+    networks: 
+      bookstore:
+        aliases:
+        - bookstore_redis
+    ports: 
+      - 6379:6379
+
   # Back-end
   backend_bookstore:
     build:
@@ -23,12 +34,13 @@ services:
       - ./back-end:/back-end
     depends_on:
       - bookstore_mongo
+      - bookstore_redis
     ports:
       - 3000:3000
     env_file: back-end/app.env
     container_name: bookstore_backend
     restart: always
-    command: sh -c "/wait-for bookstore_mongo:27017 -t 0 && npm start"
+    command: sh -c "/wait-for bookstore_mongo:27017 bookstore_redis:6379 -t 0 && npm start"
 
   # Back-end
   frontend_bookstore:

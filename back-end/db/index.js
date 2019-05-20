@@ -1,8 +1,13 @@
-const connection = require('./connection');
-const Books = require('../models/books.model');
+const connection = require("./connection");
+const { client } = require("./redis");
+const Books = require("../models/books.model");
 
-connection.once('open', () => {
-  console.info('MongoDb Connection Established!');
+connection.once("open", () => {
+  console.info("MongoDb Connection Established!");
+});
+
+client.on("ready", () => {
+  console.info("Redis is ready");
 });
 
 module.exports = {

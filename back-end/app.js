@@ -24,4 +24,8 @@ app.use(function(req, res, next) {
 // Load AppRoute
 app.use('/api', apiRouter);
 
+app.listen(3001, () => {
+    console.log("So Cool!");
+});
+
 module.exports = app;

@@ -5,6 +5,10 @@
 const express = require('express');
 const BooksService = require('../books.service').Books;
 const db = require('../../db');
+const { client } = require('../../db/redis');
+require('../cronjobs');
+
+const booksRedisKey = 'bookstore:books'
 
 //Router
 const book_api_route = express.Router();
@@ -24,10 +28,14 @@ function returnErr() {
 }
 
 function getAll(req, res) {
-    const booksService = new BooksService(db, null);
-    booksService.getList().then(function(result) {
-        res.json(result);
-    });
+    return client.get(booksRedisKey, (err, books) => {
+        if(books) {
+            return res.json({
+                source: 'cache',
+                data: JSON.parse(books)
+            })
+        }
+    })
 }
 
 function validate(data) {
