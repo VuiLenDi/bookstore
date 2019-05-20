@@ -19,7 +19,7 @@ RUN npm -g install @angular/cli
 ENV ENVIRONMENT=production1
 ENV SomeAPIKey="This is not an API Key"
 ENV SomeOtherAPIKey="This is not another API Key"
-ENV ApiUrl='http://10.12.0.145:3000'
+ENV ApiUrl='http://127.0.0.1:3000'
 
 #copy soure to app
 COPY ./ /app/
