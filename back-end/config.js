@@ -10,5 +10,6 @@ module.exports = {
     password: process.env.MONGO_PASSWORD,
     caCert: process.env.MONGO_SHARDED_CERT,
     caKey: process.env.MONGO_SHARDED_KEY
-  }
+  },
+  tokenKey: process.env.TOKEN_KEY || 'tokeysecretkey'
 };
