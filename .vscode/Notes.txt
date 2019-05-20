@@ -1,0 +1,11 @@
+for tslint, open settings.json in VSCode and add lines below:
+
+"[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+"prettier.tslintIntegration": true,
+
+add these lines as optional:
+
+"editor.formatOnSave": true,
+"editor.formatOnPaste": true,

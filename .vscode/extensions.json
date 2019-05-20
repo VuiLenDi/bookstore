@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "esbenp.prettier-vscode",
+        "msjsdiag.debugger-for-chrome",
+        "pmneo.tsimporter",
+        "dbaeumer.vscode-eslint",
+        "dsznajder.es7-react-js-snippets",
+        "andrew-codes.cypress-snippets",
+        "Mikael.Angular-BeastCode"
+    ]
+}
