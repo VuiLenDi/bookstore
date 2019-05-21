@@ -1,6 +1,6 @@
 const cron = require("node-cron");
 const db = require("../db");
-const { client } = require("../db/redis");
+const { client } = require("../library/redis");
 const BooksService = require("./books.service").Books;
 
 cron.schedule("* * * * *", () => {

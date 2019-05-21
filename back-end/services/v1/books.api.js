@@ -5,7 +5,7 @@
 const express = require('express');
 const BooksService = require('../books.service').Books;
 const db = require('../../db');
-const { client } = require('../../db/redis');
+const { client } = require('../../library/redis');
 require('../cronjobs');
 
 const booksRedisKey = 'bookstore:books'

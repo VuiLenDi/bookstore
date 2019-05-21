@@ -1,5 +1,5 @@
 const connection = require("./connection");
-const { client } = require("./redis");
+const { client } = require("../library/redis");
 const Books = require("../models/books.model");
 
 connection.once("open", () => {
