@@ -23,6 +23,20 @@ services:
     ports: 
       - 6379:6379
 
+  # Redis:
+  bookstore_elastic:
+    image: elasticsearch:6.7.2
+    container_name: bookstore_elastic
+    networks: 
+      bookstore:
+        aliases:
+        - bookstore_elastic
+    environment: 
+      - discovery.type=single-node
+    ports: 
+      - 9200:9200
+      - 9300:9300
+
   # Back-end
   backend_bookstore:
     build:
