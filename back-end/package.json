@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "sonar": "sonar-scanner -Dsonar.projectKey=nodejs:bookstore -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.login=870f218b0790188ff09cd341c3a3547ff9278ecb",
     "start": "node ./bin/www",
     "test": "jest --detectOpenHandles --forceExit"
   },

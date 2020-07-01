@@ -15,9 +15,25 @@ kind: pipeline
 name: back-end
 
 steps:
+  - name: sonar
+    image: node:12
+    commands:
+      - sudo mkdir /opt/sonarscanner
+      - cd /opt/sonarscanner
+      - sudo wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.3.0.2102-linux.zip
+      - sudo unzip sonar-scanner-cli-4.3.0.2102-linux.zip
+      - sudo rm sonar-scanner-cli-4.3.0.2102-linux.zip
+      - chmod +x sonar-scanner-cli-4.3.0.2102-linux/bin/sonar-scanner
+      - sudo ln -s /opt/sonarscanner/sonar-scanner-cli-4.3.0.2102-linux/bin/sonar-scanner /usr/local/bin/sonar-scanner
+      - cd back-end
+      - npm run sonar
+
   - name: test
     image: node:12
     commands:
       - cd back-end
       - npm install
       - npm test
+
+
+
