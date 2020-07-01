@@ -15,18 +15,16 @@ kind: pipeline
 name: back-end
 
 steps:
-  - name: sonar
-    image: node:12
-    commands:
-      - mkdir /opt/sonarscanner
-      - cd /opt/sonarscanner
-      - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.3.0.2102-linux.zip
-      - unzip sonar-scanner-cli-4.3.0.2102-linux.zip
-      - rm sonar-scanner-cli-4.3.0.2102-linux.zip
-      - chmod +x sonar-scanner-cli-4.3.0.2102-linux/bin/sonar-scanner
-      - ln -s /opt/sonarscanner/sonar-scanner-cli-4.3.0.2102-linux/bin/sonar-scanner /usr/local/bin/sonar-scanner
-      - cd back-end
-      - npm run sonar
+  - name: code-analysis
+    image: aosapps/drone-sonar-plugin
+    settings:
+      sonar_host:
+        from_secret: sonar_host
+      sonar_token:
+        from_secret: sonar_token
+    ver: 1.0
+    timeout: 20
+    sources: ./back-end
 
   - name: test
     image: node:12
