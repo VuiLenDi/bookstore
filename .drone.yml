@@ -24,7 +24,7 @@ steps:
         from_secret: sonar_token
     ver: 1.0
     timeout: 20
-    sources: ./back-end
+    sources: back-end
 
   - name: test
     image: node:12
