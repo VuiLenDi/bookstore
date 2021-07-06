@@ -35,6 +35,7 @@ jobs:
   back-end-build-and-test:
     docker:
       - image: cimg/node:14.0
+    working_directory: ~/back-end
     steps:
       - checkout
       - node/install-packages
