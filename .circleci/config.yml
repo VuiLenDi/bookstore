@@ -35,9 +35,10 @@ jobs:
   back-end-build-and-test:
     docker:
       - image: cimg/node:14.0
-    working_directory: ~/back-end
+    working_directory: ~/project/back-end
     steps:
-      - checkout
+      - checkout:
+          path: ~/project
       - node/install-packages
       - run:
           name: Change working dir
