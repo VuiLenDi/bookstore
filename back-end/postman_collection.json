@@ -49,7 +49,7 @@
 					"raw": "{\n\t\"title\": \"Test1\",\n\t\"category\": \"Drama\",\n\t\"desc\": \"Thu nghiem xem sao\"\n}"
 				},
 				"url": {
-					"raw": "127.0.0.1:3000/api/books/addBook",
+					"raw": "127.0.0.1:3000/api/books/add",
 					"host": [
 						"127",
 						"0",

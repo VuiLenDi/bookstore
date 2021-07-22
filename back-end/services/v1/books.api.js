@@ -26,7 +26,7 @@ function returnErr() {
 function getAll(req, res) {
     const booksService = new BooksService(db, null);
     booksService.getList().then(function(result) {
-        res.json(result);
+        res.json(returnData(result));
     });
 }
 
@@ -59,7 +59,7 @@ function addBook(req, res) {
     }
 }
 
-book_api_route.post('/addBook', addBook);
+book_api_route.post('/add', addBook);
 book_api_route.get('/list', getAll);
 
 module.exports = book_api_route;

@@ -20,7 +20,6 @@ app.use(function(req, res, next) {
     next();
 });
 
-
 // Load AppRoute
 app.use('/api', apiRouter);
 
