@@ -33,7 +33,7 @@ describe('Test the /api/books/list path', () => {
 
 describe('Test the /api/books/addBook path', () => {
     test('It should return 404 with the GET method', () => {
-        return request(server).get('/api/books/addBook').expect(404);
+        return request(server).get('/api/books/add').expect(404);
     });
     test('It should return 404 with the PUT method', () => {
         return request(server).put('/api/books/addBook').expect(404);
